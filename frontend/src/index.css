@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #e2e8f0;
+  background:
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.14), transparent 28%),
+    radial-gradient(circle at top right, rgba(34, 211, 238, 0.12), transparent 22%),
+    linear-gradient(180deg, #020617 0%, #020617 100%);
+}
+
+html {
+  @apply bg-slate-950;
+}
+
+body {
+  @apply m-0 min-h-screen bg-slate-950 font-body text-slate-200 antialiased;
+}
+
+#root {
+  @apply min-h-screen;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+
+.glass-panel {
+  @apply border border-slate-800 bg-slate-900/95 backdrop-blur-xl;
+}
+
+.page-shell {
+  @apply rounded-3xl border border-slate-800 bg-slate-900 shadow-soft;
+}
+
+.surface-muted {
+  @apply bg-slate-950/70;
+}
+
+.surface-subtle {
+  @apply bg-slate-900/60;
+}
+
+.input-dark {
+  @apply rounded-xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20;
+}
+
+.table-row-dark {
+  @apply border-t border-slate-800 transition hover:bg-slate-800/40;
+}
+
+.auth-scene {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top, rgba(99, 102, 241, 0.22), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(34, 211, 238, 0.12), transparent 26%),
+    linear-gradient(180deg, #020617 0%, #020617 100%);
+  isolation: isolate;
+}
+
+.auth-scene::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 90%);
+  opacity: 0.38;
+  pointer-events: none;
+}
+
+.auth-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.14), transparent 30%),
+    radial-gradient(circle at 80% 18%, rgba(34, 211, 238, 0.12), transparent 24%),
+    radial-gradient(circle at 50% 100%, rgba(168, 85, 247, 0.1), transparent 28%);
+  pointer-events: none;
+}
+
+.auth-orb-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.auth-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(72px);
+  opacity: 0.85;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.auth-orb-1 {
+  top: 4%;
+  left: 4%;
+  height: 24rem;
+  width: 24rem;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.62), rgba(99, 102, 241, 0));
+  animation: orbFloatOne 18s ease-in-out infinite;
+}
+
+.auth-orb-2 {
+  top: 10%;
+  right: 6%;
+  height: 26rem;
+  width: 26rem;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.48), rgba(34, 211, 238, 0));
+  animation: orbFloatTwo 24s ease-in-out infinite;
+}
+
+.auth-orb-3 {
+  bottom: 4%;
+  left: 18%;
+  height: 20rem;
+  width: 20rem;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.36), rgba(168, 85, 247, 0));
+  animation: orbFloatThree 20s ease-in-out infinite;
+}
+
+.auth-orb-4 {
+  bottom: 2%;
+  right: 12%;
+  height: 18rem;
+  width: 18rem;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.34), rgba(59, 130, 246, 0));
+  animation: orbFloatFour 22s ease-in-out infinite;
+}
+
+.auth-glass-card {
+  backdrop-filter: blur(22px);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.76), rgba(15, 23, 42, 0.68));
+  box-shadow: 0 24px 70px rgba(2, 6, 23, 0.5);
+}
+
+@keyframes orbFloatOne {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(24px, 18px, 0) scale(1.08);
+  }
+}
+
+@keyframes orbFloatTwo {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-28px, 24px, 0) scale(0.94);
+  }
+}
+
+@keyframes orbFloatThree {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(18px, -20px, 0) scale(1.06);
+  }
+}
+
+@keyframes orbFloatFour {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-18px, -14px, 0) scale(0.92);
+  }
+}
