@@ -164,16 +164,16 @@ npm install
 ```
 
 ### Backend Configuration
-Create `.env` inside `backend/`:
+Copy `backend/.env.example` to `backend/.env` and fill in your values:
 
 ```env
 PORT=5000
 NODE_ENV=development
 CLIENT_URL=http://localhost:5173
-DATABASE_URL=postgresql://postgres:postgres@localhost:5432/team_task_manager?schema=public
-JWT_SECRET=replace-with-a-long-random-secret
+DATABASE_URL=your_postgresql_connection_string
+JWT_SECRET=your_jwt_secret
 JWT_EXPIRES_IN=7d
-GEMINI_API_KEY=optional_gemini_api_key
+GEMINI_API_KEY=your_gemini_api_key
 GEMINI_MODEL=gemini-1.5-flash
 ```
 
@@ -222,22 +222,24 @@ npm run start
 
 In production, the Express server serves the built Vite frontend from `frontend/dist`.
 
-## 🌐 Railway Deployment
-This repository is configured for single-service Railway deployment using npm workspaces.
+## 🌐 Render Deployment
+This repository is configured for deployment on Render with NeonDB PostgreSQL.
 
 ### Deployment Steps
 1. Push repository to GitHub
-2. Create new Railway project from the repo
-3. Add PostgreSQL plugin
+2. Create new Web Service on Render from the repo
+3. Connect NeonDB PostgreSQL database (or add PostgreSQL database on Render)
 4. Set environment variables:
-   - `DATABASE_URL`
+   - `DATABASE_URL` (your NeonDB PostgreSQL connection string)
    - `JWT_SECRET`
    - `JWT_EXPIRES_IN`
-   - `CLIENT_URL`
+   - `CLIENT_URL` (your Render app URL)
    - `NODE_ENV=production`
    - `GEMINI_API_KEY` (optional)
-5. Deploy
-6. Run post-deploy command: `cd backend && npm run prisma:generate && npm run prisma:migrate`
+5. Set build command: `npm run build`
+6. Set start command: `npm run start`
+7. Deploy
+8. Run post-deploy command in Render shell: `cd backend && npm run prisma:generate && npm run prisma:migrate`
 
 ## 🔐 Security Notes
 - Passwords are hashed with bcrypt
