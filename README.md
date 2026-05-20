@@ -8,7 +8,7 @@
 A modern AI-powered full-stack team collaboration and productivity management platform with role-based access control, Kanban workflow, and intelligent productivity insights.
 
 ## 🌐 Live Demo
-- ![Live](https://team-task-manager-frontend-7a4w.onrender.com)
+- https://team-task-manager-frontend-7a4w.onrender.com
 
 ## 🚀 Overview
 Team Task Manager Pro is a scalable, SaaS-grade workspace designed to streamline collaboration, monitor progress, and elevate team efficiency. Leveraging AI-driven insights and a robust Kanban-based workflow, it empowers teams to effortlessly manage projects and tasks while maintaining granular role-based access control.
