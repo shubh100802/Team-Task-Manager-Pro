@@ -19,7 +19,10 @@ const frontendDistPath = path.resolve(__dirname, "../../frontend/dist");
 
 app.use(
   cors({
-    origin: env.NODE_ENV === "production" ? true : env.CLIENT_URL,
+    origin: [
+      "http://localhost:5173",
+      env.CLIENT_URL,
+    ],
     credentials: true,
   }),
 );
